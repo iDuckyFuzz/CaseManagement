@@ -27,27 +27,21 @@ form {
     cursor: pointer;
     width: 100%;
   }
+
+  #login{
+    background-color: #033877;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
   
   /* Add a hover effect for buttons */
   button:hover {
     opacity: 0.8;
   }
-  
-  /* Extra style for the cancel button (red) */
-  .cancelbtn {
-    width: auto;
-    background: #ffe433;
-    box-shadow: 0 0 0.8rem rgba(0,0,0,0.16);
-    color: #1c2640;
-    font-weight: 500;
-    margin-bottom: 2.4rem;
-    margin-top: .8rem;
-    padding-left: 3.2rem;
-    padding-right: 3.2rem;
-    text-align: center;
-  }
-
-  
   
   /* Add padding to containers */
   .container {
@@ -56,8 +50,7 @@ form {
   
   /* The "Forgot password" text */
   span.psw {
-    float: right;
-    padding-top: 16px;
+    padding-top: 12px;
   }
 
   .header{
