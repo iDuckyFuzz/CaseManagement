@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>OneCase Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>OneCase Login</title>
 </head>
+
 <body>
 
   <img id="cap-one-logo" src="\images\logo_capitalone-blue.svg" alt="Capital One home page">
-    <form method="post">      
-        <div class="container">
-          <label for="uname"><b>Username</b></label>
-          <input name="id" type="text" required>
-      
-          <label for="psw"><b>Password</b></label>
-          <input name="pass" type="password" required>
-      
-          <input type="button" value="Login" onClick="pasuser(this.form)">
-          <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me
-          </label>
-        </div>
-      
-        <div class="container" style="background-color:#f1f1f1">
-          <button type="button" class="cancelbtn">Cancel</button>
-          <span class="psw">Forgot <a href="#">password?</a></span>
-        </div>
-      </form>
-    
+  <h1 class="header">Welcome to CaseOne</h1>
+  <form method="post">
+    <div class="container">
+      <label for="uname"><b>EUID</b></label>
+      <input name="id" type="text" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input name="pass" type="password" required>
+
+      <input type="button" value="Login" onClick="pasuser(this.form)">
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+
 </body>
 
 <script src="functions.js"></script>
+
 </html>
