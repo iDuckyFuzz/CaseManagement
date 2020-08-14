@@ -1,0 +1,23 @@
+{
+  "name": "case-management",
+  "version": "1.0.0",
+  "description": "Capital One case management system",
+  "main": "functions.js",
+  "dependencies": {
+    "mastercard-mastercom": "^6.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iDuckyFuzz/CaseManagement.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iDuckyFuzz/CaseManagement/issues"
+  },
+  "homepage": "https://github.com/iDuckyFuzz/CaseManagement#readme"
+}

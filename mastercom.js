@@ -2,7 +2,6 @@
  *
  * Script-Name: create_case_sample
  */
-
 var mastercom = require('mastercard-mastercom');
 var MasterCardAPI = mastercom.MasterCardAPI;
 var ResourceConfig = mastercom.ResourceConfig
