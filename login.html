@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
@@ -9,15 +9,16 @@
 </head>
 <body>
 
-    <form action="home.html" method="post">      
+  <img id="cap-one-logo" src="\images\logo_capitalone-blue.svg" alt="Capital One home page">
+    <form method="post">      
         <div class="container">
           <label for="uname"><b>Username</b></label>
-          <input type="text" placeholder="Enter Username" name="uname" required>
+          <input name="id" type="text" required>
       
           <label for="psw"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" name="psw" required>
+          <input name="pass" type="password" required>
       
-          <button type="submit">Login</button>
+          <input type="button" value="Login" onClick="pasuser(this.form)">
           <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
           </label>
@@ -30,4 +31,6 @@
       </form>
     
 </body>
+
+<script src="functions.js"></script>
 </html>
