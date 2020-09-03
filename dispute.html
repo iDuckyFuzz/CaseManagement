@@ -17,9 +17,8 @@
         <a href="casemanagement.html">Case Management</a>
     </div>
 
-    <h1 class="header">Disputes Portal</h1>
-
     <form method="post">
+        <h1 class="header">Disputes Portal</h1>
         <div class="container">
             <label for="casetype"><br>Choose case Type:</br></label>
             <select id="casetype" name="casetype">
@@ -32,23 +31,29 @@
             <label for="arn"><b>ARN (Acquirer Reference Number)</b></label>
             <input name="arn" type="text" required>
             <label for="trxndate"><b>Transaction Date</b></label>
-            <input name="trxndate" type="text" required>
+            <br>
+            <input class="datepicker" name="trxndate" type="date" required>
+            <br>
             <label for="cancellation"><b>Cancellation Date</b></label>
-            <input name="cancellation" type="text" required>
+            <br>
+            <input class="datepicker" name="cancellation" type="date" required>
+            <br>
             <label for="amount"><b>Amount</b></label>
-            <input name="amount" type="text" required>
+            <input name="amount" type="text" placeholder='0.00' required>
             <label for="merchant"><b>Merchant Name</b></label>
             <input name="merchant" type="text" required>
             <label for="chrgebck"><b>Chargeback Reference Number</b></label>
             <input name="chrgebck" type="text" required>
 
-            <input id="submit" type="button" value="submit" onclick="">
+            <input id="submit" type="button" value="submit" onclick="submitDispute(this.form)">
         </div>
     </form>
 
-    <input id="logout" type="button" value="logout" onclick="">
+    <input id="logout" type="button" value="logout" onClick="">
 
 
 </body>
+
+<script src="functions.js"></script>
 
 </html>

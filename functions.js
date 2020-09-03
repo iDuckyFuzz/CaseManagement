@@ -18,3 +18,11 @@ function pasuser(form) {
         alert("Invalid UserID");
     }
 }
+
+function submitDispute(form){
+    const casetype = form.elements["casetype"].selectedIndex;
+    console.log(casetype);
+
+    const arn = form.arn.value;
+    console.log(arn);
+}

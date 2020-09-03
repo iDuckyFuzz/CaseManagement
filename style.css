@@ -25,6 +25,15 @@ form {
     border: 1px solid #ccc;
     box-sizing: border-box;
   }
+
+  .datepicker{
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
   
   /* Set a style for all buttons */
   button {
@@ -121,6 +130,7 @@ form {
   .topnav {
     overflow: hidden;
     background-color:white;
+    padding-bottom: 5px;
   }
   
   .topnav a {
