@@ -16,6 +16,15 @@ form {
     border: 1px solid #ccc;
     box-sizing: border-box;
   }
+
+  #casetype{
+    width: 15%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
   
   /* Set a style for all buttons */
   button {
@@ -36,6 +45,26 @@ form {
     border: none;
     cursor: pointer;
     width: 100%;
+  }
+
+  #submit{
+    background-color: #033877;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  #logout{
+    background-color: #033877;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100px;
   }
   
   /* Add a hover effect for buttons */

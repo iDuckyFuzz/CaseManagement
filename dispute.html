@@ -15,9 +15,38 @@
         <a href="home.html">Home</a>
         <a class="active" href="dispute.html">Dispute</a>
         <a href="casemanagement.html">Case Management</a>
-      </div>
+    </div>
 
-      <h1 class="header">Disputes Portal</h1>
+    <h1 class="header">Disputes Portal</h1>
+
+    <form method="post">
+        <div class="container">
+            <label for="casetype"><br>Choose case Type:</br></label>
+            <select id="casetype" name="casetype">
+                <option value="1">Pre-arbitration</option>
+                <option value="2">Arbitration</option>
+                <option value="3">Pre-compliance</option>
+                <option value="4">Compliance</option>
+            </select>
+            <br>
+            <label for="arn"><b>ARN (Acquirer Reference Number)</b></label>
+            <input name="arn" type="text" required>
+            <label for="trxndate"><b>Transaction Date</b></label>
+            <input name="trxndate" type="text" required>
+            <label for="cancellation"><b>Cancellation Date</b></label>
+            <input name="cancellation" type="text" required>
+            <label for="amount"><b>Amount</b></label>
+            <input name="amount" type="text" required>
+            <label for="merchant"><b>Merchant Name</b></label>
+            <input name="merchant" type="text" required>
+            <label for="chrgebck"><b>Chargeback Reference Number</b></label>
+            <input name="chrgebck" type="text" required>
+
+            <input id="submit" type="button" value="submit" onclick="">
+        </div>
+    </form>
+
+    <input id="logout" type="button" value="logout" onclick="">
 
 
 </body>
