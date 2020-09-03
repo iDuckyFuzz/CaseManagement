@@ -19,10 +19,52 @@ function pasuser(form) {
     }
 }
 
-function submitDispute(form){
-    const casetype = form.elements["casetype"].selectedIndex;
-    console.log(casetype);
+function disputeData(caseType, arn, trxnDate, cnlxDate, amount, mrchName, chrbkRef) {
+    this.caseType=caseType,
+    this.arn=arn,
+    this.trxnDate=trxnDate,
+    this.cnlxDate=cnlxDate,
+    this.amount=amount,
+    this.mrchName=mrchName,
+    this.chrbkRef=chrbkRef
+}
 
+let key = 0;
+
+function submitDispute(form){
+    const caseType = form.elements["casetype"].selectedIndex;
+    
     const arn = form.arn.value;
+    const amount = form.amount.value;
+    const merch = form.merchant.value;
+    const chrbk = form.chrgebck.value;
     console.log(arn);
+    const chargebackData = new disputeData(caseType,arn,"","",amount,merch,chrbk);
+
+    const data = JSON.stringify(chargebackData);
+    console.log(chargebackData);
+    console.log(data);
+
+    localStorage.setItem(key, data);
+    key++;
+}
+
+function displaySubmittedDisputes(){
+    const textBox = document.getElementById('data');
+
+    textBox.value = allStorage();
+    
+}
+
+function allStorage() {
+
+    var values = [],
+        keys = Object.keys(localStorage),
+        i = keys.length;
+
+    while ( i-- ) {
+        values.push( localStorage.getItem(keys[i]) );
+    }
+
+    return values;
 }
