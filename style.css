@@ -73,7 +73,7 @@ form {
 }
 
 .navigation {
-    color: #fff;
+    color: #033877;
     position: relative;
     text-align: right;
 }
@@ -87,5 +87,29 @@ form {
     .cancelbtn {
       width: 100%;
     }
+  }
+
+  .topnav {
+    overflow: hidden;
+    background-color:white;
+  }
+  
+  .topnav a {
+    float: left;
+    color: #033877;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #033877;
+    color: white;
+  }
+  
+  .topnav a.active {
+    background-color: #033877;
+    color: white;
   }
   
