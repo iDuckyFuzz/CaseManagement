@@ -53,6 +53,7 @@ function displaySubmittedDisputes() {
     const textBox = document.getElementById('data');
 
     textBox.value = allStorage();
+    populateDropdown();
 
 }
 
@@ -71,4 +72,19 @@ function allStorage() {
 
 function clearStorage() {
     localStorage.clear();
+}
+
+function populateDropdown() {
+    const values = allStorage();
+    console.log(values);
+
+    var submissions = document.getElementById("submissions");
+
+    for (i = 0; i < values.length; i++) {
+        var option = document.createElement("OPTION");
+        option.innerHTML = i;
+        option.value = i;
+        submissions.options.add(option);
+    }
+
 }

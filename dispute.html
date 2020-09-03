@@ -22,7 +22,7 @@
         <h1 class="header">Disputes Portal</h1>
         <div class="container">
             <label for="casetype"><br>Choose case Type:</br></label>
-            <select id="casetype" name="casetype">
+            <select class="dropdown" name="casetype">
                 <option value="1">Pre-arbitration</option>
                 <option value="2">Arbitration</option>
                 <option value="3">Pre-compliance</option>
@@ -46,11 +46,11 @@
             <label for="chrgebck"><b>Chargeback Reference Number</b></label>
             <input name="chrgebck" type="text" required>
 
-            <input id="submit" type="button" value="submit" onclick="submitDispute(this.form)">
+            <input id="submit" type="button" value="Submit" onclick="submitDispute(this.form)">
         </div>
     </form>
 
-    <input id="logout" type="button" value="logout" onClick="">
+    <input id="logout" type="button" value="Logout" onClick="">
 
 
 </body>
