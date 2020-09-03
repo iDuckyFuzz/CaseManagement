@@ -20,26 +20,26 @@ function pasuser(form) {
 }
 
 function disputeData(caseType, arn, trxnDate, cnlxDate, amount, mrchName, chrbkRef) {
-    this.caseType=caseType,
-    this.arn=arn,
-    this.trxnDate=trxnDate,
-    this.cnlxDate=cnlxDate,
-    this.amount=amount,
-    this.mrchName=mrchName,
-    this.chrbkRef=chrbkRef
+    this.caseType = caseType,
+        this.arn = arn,
+        this.trxnDate = trxnDate,
+        this.cnlxDate = cnlxDate,
+        this.amount = amount,
+        this.mrchName = mrchName,
+        this.chrbkRef = chrbkRef
 }
 
 let key = 0;
 
-function submitDispute(form){
+function submitDispute(form) {
     const caseType = form.elements["casetype"].selectedIndex;
-    
+
     const arn = form.arn.value;
     const amount = form.amount.value;
     const merch = form.merchant.value;
     const chrbk = form.chrgebck.value;
     console.log(arn);
-    const chargebackData = new disputeData(caseType,arn,"","",amount,merch,chrbk);
+    const chargebackData = new disputeData(caseType, arn, "", "", amount, merch, chrbk);
 
     const data = JSON.stringify(chargebackData);
     console.log(chargebackData);
@@ -49,11 +49,11 @@ function submitDispute(form){
     key++;
 }
 
-function displaySubmittedDisputes(){
+function displaySubmittedDisputes() {
     const textBox = document.getElementById('data');
 
     textBox.value = allStorage();
-    
+
 }
 
 function allStorage() {
@@ -62,9 +62,13 @@ function allStorage() {
         keys = Object.keys(localStorage),
         i = keys.length;
 
-    while ( i-- ) {
-        values.push( localStorage.getItem(keys[i]) );
+    while (i--) {
+        values.push(localStorage.getItem(keys[i]));
     }
 
     return values;
+}
+
+function clearStorage() {
+    localStorage.clear();
 }
