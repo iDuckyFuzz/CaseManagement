@@ -103,7 +103,7 @@ function populateDropdown() {
 function update() {
     const i = document.getElementById("submissions").value;
     keys = Object.keys(localStorage)
-    document.getElementById("data").value = localStorage.getItem(keys[i]);
+    document.getElementById("data") = localStorage.getItem(keys[i]);
 }
 
 function submissionCheck() {

@@ -13,3 +13,11 @@ function getSubOptionValue(select){
         document.getElementById("cases").style.visibility = "visible";
     }
 }
+
+function populateAccountData(select){
+    const listDetails = select;
+    if(listDetails!=="")
+    {
+        document.getElementById("acctid").value = listDetails;
+    }
+}
