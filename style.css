@@ -26,6 +26,19 @@ form {
     box-sizing: border-box;
   }
 
+  .list{
+    width: 15%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+  .sublist{
+    visibility: hidden;
+  }
+
   .datepicker{
     width: 40%;
     padding: 12px 20px;
@@ -87,6 +100,16 @@ form {
   }
 
   #clear{
+    background-color: #033877;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+  }
+
+  #add{
     background-color: #033877;
     color: white;
     padding: 14px 20px;

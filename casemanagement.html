@@ -16,13 +16,42 @@
         <a href="dispute.html">Dispute</a>
         <a class="active" href="casemanagement.html">Case Management</a>
         <a href="admin.html">Admin</a>
-      </div>
+    </div>
 
-      <h1 class="header">Case Management</h1>
+    <h1 class="header">Case Management</h1>
 
-      <input id="logout" type="button" value="Logout" onclick="">
+    <label for="cars">Choose a car:</label>
+
+    <select class="dropdown" name="department" id="department">
+        <option value="fraud">Fraud</option>
+        <option value="operations">Operations</option>
+    </select>
+    <input id="add" type="button" value="Add Queue" onclick="">
+    <br>
+    <select class="list" name="teams" size="20" onclick="getOptionValue(this.value)">   
+        <option value="ato">ATO</option>
+        <option value="app">Application Fraud</option>
+        <option value="crt">CRT</option>
+        <option value="disputes">Disputes</option>
+        <option value="frec">Fraud Recoveries</option>
+        <option value="complaints">Complaints</option>
+    </select>  
+    <select class="list sublist" id="workstreams" size="20" onclick="getSubOptionValue(this.value)">   
+        <option value="multimobile">Multi Mobile Report</option>
+        <option value="baddetails">Bad Details Report</option>
+        <option value="newcases">New Cases</option>
+        <option value="applications">New Applications</option>
+    </select>
+    <select class="list sublist" id="cases" size="20">   
+        <option value="000008475836">000008475836</option>
+        <option value="000008475836">000009873455</option>
+    </select>
+
+    <br>
+
+    <input id="logout" type="button" value="Logout" onclick="">
 
 
 </body>
-
+<script src="casemanagement.js"></script>
 </html>
