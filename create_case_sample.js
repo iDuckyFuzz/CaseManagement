@@ -16,9 +16,9 @@ var keyPassword = "keystorepassword";   // For production: change this to the ke
 //
 var authentication = new MasterCardAPI.OAuth(consumerKey, keyStorePath, keyAlias, keyPassword);
 MasterCardAPI.init({
-    sandbox: true,
-    debug: true,
-    authentication: authentication
+  sandbox: true,
+  debug: true,
+  authentication: authentication
 });
 // This is needed to change the environment to run the sample code. For production, remove the next line and pass sandbox: false in the init() function.
 MasterCardAPI.setEnvironment("sandbox");
@@ -49,19 +49,19 @@ var requestData = {
   "changeReasonCodeReason": "This is a test reason"
 };
 mastercom.CaseFiling.create(requestData
-, function (error, data) {
+  , function (error, data) {
     if (error) {
-        err("HttpStatus: "+error.getHttpStatus());
-        err("Message: "+error.getMessage());
-        err("ReasonCode: "+error.getReasonCode());
-        err("Source: "+error.getSource());
-        err(error);
+      err("HttpStatus: " + error.getHttpStatus());
+      err("Message: " + error.getMessage());
+      err("ReasonCode: " + error.getReasonCode());
+      err("Source: " + error.getSource());
+      err(error);
 
     }
     else {
-        out(data.caseId); //-->536092
+      out(data.caseId); //-->536092
     }
-});
+  });
 
 
 function out(value) {

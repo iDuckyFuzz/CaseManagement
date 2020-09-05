@@ -43,7 +43,7 @@ function submitDispute(form) {
     const cnclDate = form.cancellation.value;
 
     console.log(arn);
-    const chargebackData = new disputeData(caseType, arn, acctid ,trxnDate,cnclDate, amount, merch, chrbk);
+    const chargebackData = new disputeData(caseType, arn, acctid, trxnDate, cnclDate, amount, merch, chrbk);
 
     const data = JSON.stringify(chargebackData);
     console.log(chargebackData);
