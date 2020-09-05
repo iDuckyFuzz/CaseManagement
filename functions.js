@@ -19,9 +19,10 @@ function pasuser(form) {
     }
 }
 
-function disputeData(caseType, arn, trxnDate, cnlxDate, amount, mrchName, chrbkRef) {
+function disputeData(caseType, arn, acctid, trxnDate, cnlxDate, amount, mrchName, chrbkRef) {
     this.caseType = caseType,
         this.arn = arn,
+        this.acctid = acctid,
         this.trxnDate = trxnDate,
         this.cnlxDate = cnlxDate,
         this.amount = amount,
@@ -33,6 +34,7 @@ function submitDispute(form) {
     const caseType = form.elements["casetype"].selectedIndex;
 
     const arn = form.arn.value;
+    const acctid = form.acctid.value;
     const amount = form.amount.value;
     const merch = form.merchant.value;
     const chrbk = form.chrgebck.value;
@@ -41,7 +43,7 @@ function submitDispute(form) {
     const cnclDate = form.cancellation.value;
 
     console.log(arn);
-    const chargebackData = new disputeData(caseType, arn,trxnDate,cnclDate, amount, merch, chrbk);
+    const chargebackData = new disputeData(caseType, arn, acctid ,trxnDate,cnclDate, amount, merch, chrbk);
 
     const data = JSON.stringify(chargebackData);
     console.log(chargebackData);
@@ -95,7 +97,7 @@ function populateDropdown() {
         option.value = i;
         submissions.options.add(option);
     }
-    const textBox = document.getElementById('data');
+    const textBox = document.getElementById("data");
     keys = Object.keys(localStorage)
     textBox.value = localStorage.getItem(keys[0]);
 }
@@ -103,11 +105,7 @@ function populateDropdown() {
 function update() {
     const i = document.getElementById("submissions").value;
     keys = Object.keys(localStorage)
-    document.getElementById("data") = localStorage.getItem(keys[i]);
-}
-
-function submissionCheck() {
-
+    document.getElementById("data").value = localStorage.getItem(keys[i]);
 }
 
 var modal = document.getElementById("myModal");
