@@ -20,4 +20,4 @@ function populateAccountData(select){
     {
         document.getElementById("acctid").value = listDetails;
     }
-}
+} 

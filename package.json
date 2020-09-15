@@ -1,0 +1,23 @@
+{
+  "name": "casemanagement",
+  "version": "1.0.0",
+  "description": "case management system and disputes portal",
+  "main": "functions.js",
+  "dependencies": {
+    "firebase": "^7.20.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iDuckyFuzz/CaseManagement.git"
+  },
+  "author": "Sam Wilson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iDuckyFuzz/CaseManagement/issues"
+  },
+  "homepage": "https://github.com/iDuckyFuzz/CaseManagement#readme"
+}

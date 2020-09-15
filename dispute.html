@@ -66,8 +66,28 @@
         </div>
     </div>
 
-</body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
 
-<script src="functions.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyDRqAAAChI8pZ0bR4J-FXx3KBqSkvRqM6o",
+            authDomain: "case-one-c4e4c.firebaseapp.com",
+            databaseURL: "https://case-one-c4e4c.firebaseio.com",
+            projectId: "case-one-c4e4c",
+            storageBucket: "case-one-c4e4c.appspot.com",
+            messagingSenderId: "414322616980",
+            appId: "1:414322616980:web:c477e3b02c4131f4c42281",
+            measurementId: "G-GR7FQX00V9"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="functions.js"></script>
+
+</body>
 
 </html>

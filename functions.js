@@ -1,3 +1,9 @@
+const database = firebase.database();
+
+
+// Get a reference to the database service
+
+
 let count = 0;
 
 /*This Script allows people to enter by using a form that asks for a
@@ -55,6 +61,16 @@ function submitDispute(form) {
     //certain detail on the form is not provided
     var modal = document.getElementById("myModal");
     modal.style.display = "block";
+
+    database.ref(arn).set({
+        case_type: caseType,
+        acct_id: acctid,
+        trxn_date: trxnDate,
+        cncl_date: cnclDate,
+        amount: amount,
+        merch: merch,
+        cb_ref: chrbk
+    })
 
     form.reset();
 }
