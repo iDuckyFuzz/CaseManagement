@@ -1,9 +1,4 @@
 const database = firebase.database();
-
-
-// Get a reference to the database service
-
-
 let count = 0;
 
 /*This Script allows people to enter by using a form that asks for a
@@ -34,6 +29,21 @@ function disputeData(caseType, arn, acctid, trxnDate, cnlxDate, amount, mrchName
         this.amount = amount,
         this.mrchName = mrchName,
         this.chrbkRef = chrbkRef
+}
+
+//testing retrieving data
+function readData(){
+    var ref = database.ref('34534645');
+    ref.on('value', gotData, errData)
+    console.log("working!");
+}
+
+function gotData(data){
+    console.log(data.val());
+}
+
+function errData(err){
+    console.log("Error!" + err);
 }
 
 function submitDispute(form) {
@@ -111,7 +121,12 @@ function populateDropdown() {
         //chargeback reference should be a unique values
         option.innerHTML = parsedObject.chrbkRef;
         option.value = i;
+
+        //may need to implement a better fix here
+        if(option.innerHTML != "undefined")
+        {
         submissions.options.add(option);
+        }
     }
     const textBox = document.getElementById("data");
     keys = Object.keys(localStorage)
@@ -122,6 +137,7 @@ function update() {
     const i = document.getElementById("submissions").value;
     keys = Object.keys(localStorage)
     document.getElementById("data").value = localStorage.getItem(keys[i]);
+    readData();
 }
 
 var modal = document.getElementById("myModal");
