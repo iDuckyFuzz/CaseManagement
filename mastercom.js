@@ -43,10 +43,6 @@ var requestData = {
   "filingAs": "A",
   "filingIca": "001234",
   "memo": "This is a test memo",
-  "messageText": "This is a test message",
-  "changeReasonCodeFlag": "Y",
-  "updatedChargebackReasonCode": "4863",
-  "changeReasonCodeReason": "This is a test reason"
 };
 mastercom.CaseFiling.create(requestData
 , function (error, data) {
