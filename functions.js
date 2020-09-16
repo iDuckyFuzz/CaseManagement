@@ -40,6 +40,10 @@ function readData(){
 
 function gotData(data){
     console.log(data.val());
+
+    const firebasedata = document.getElementById('fireabasedata');
+    const returnedData = data.val();
+    firebasedata.value = returnedData.acct_id;
 }
 
 function errData(err){
