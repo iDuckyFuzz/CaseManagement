@@ -37,17 +37,17 @@ function submitDispute(form) {
     let arn;
     form.arn.value === "" ? missingRequired = true : arn = form.arn.value;
     let acctid;
-    form.arn.value === "" ? missingRequired = true : acctid = form.acctid.value;
+    form.acctid.value === "" ? missingRequired = true : acctid = form.acctid.value;
     let amount;
-    form.arn.value === "" ? missingRequired = true : amount = form.amount.value;
+    form.amount.value === "" ? missingRequired = true : amount = form.amount.value;
     let merch;
-    form.arn.value === "" ? missingRequired = true : merch = form.merchant.value;
+    form.merchant.value === "" ? missingRequired = true : merch = form.merchant.value;
     let chrbk;
-    form.arn.value === "" ? missingRequired = true : chrbk = form.chrgebck.value;
+    form.chrgebck.value === "" ? missingRequired = true : chrbk = form.chrgebck.value;
     let trxnDate;
-    form.arn.value === "" ? missingRequired = true : trxnDate = form.trxndate.value;
+    form.trxndate.value === "" ? missingRequired = true : trxnDate = form.trxndate.value;
     let cnclDate;
-    form.arn.value === "" ? missingRequired = true : cnclDate = form.cancellation.value;
+    form.cancellation.value === "" ? missingRequired = true : cnclDate = form.cancellation.value;
 
     console.log(arn);
     const chargebackData = new disputeData(caseType, arn, acctid, trxnDate, cnclDate, amount, merch, chrbk);
@@ -61,10 +61,13 @@ function submitDispute(form) {
     //add something here to update modal with error message if 
     //certain detail on the form is not provided
     let modal = document.getElementById("myModal");
-    modal.style.display = "block";
+    let modalTitle = document.getElementById("modal-title");
+    let modalMessage = document.getElementById("modal-message");
 
     if (!missingRequired) {
-
+        modalTitle.innerHTML = "Dispute Submitted Succesfully"
+        modalMessage.innerHTML = "Click anywhere on the page to continue..."
+        modal.style.display = "block";
         database.ref(arn).set({
             case_type: caseType,
             acct_id: acctid,
@@ -77,7 +80,9 @@ function submitDispute(form) {
 
         form.reset();
     }else{
-        alert("Error! Data is missing from a required field.")
+        modalTitle.innerHTML = "ERROR!: Failed To Submit Dispute"
+        modalMessage.innerHTML = "Please Check Your Submission"
+        modal.style.display = "block";
     }
 }
 
