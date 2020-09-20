@@ -13,6 +13,7 @@ function disputeData(caseType, arn, acctid, trxnDate, cnlxDate, amount, mrchName
 
 //testing retrieving data
 function readData() {
+    let test = firebase.database.DataSnapshot.getChildren();
     let ref = database.ref('34534645');
     ref.on('value', gotData, errData)
     console.log("working!");
@@ -79,7 +80,7 @@ function submitDispute(form) {
         })
 
         form.reset();
-    }else{
+    } else {
         modalTitle.innerHTML = "ERROR!: Failed To Submit Dispute"
         modalMessage.innerHTML = "Please Check Your Submission"
         modal.style.display = "block";
