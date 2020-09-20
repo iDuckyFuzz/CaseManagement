@@ -12,13 +12,13 @@ function disputeData(caseType, arn, acctid, trxnDate, cnlxDate, amount, mrchName
 }
 
 //testing retrieving data
-function readData(){
-    var ref = database.ref('34534645');
+function readData() {
+    let ref = database.ref('34534645');
     ref.on('value', gotData, errData)
     console.log("working!");
 }
 
-function gotData(data){
+function gotData(data) {
     console.log(data.val());
 
     const firebasedata = document.getElementById('fireabasedata');
@@ -26,21 +26,28 @@ function gotData(data){
     firebasedata.value = returnedData.acct_id;
 }
 
-function errData(err){
+function errData(err) {
     console.log("Error!" + err);
 }
 
 function submitDispute(form) {
     const caseType = form.elements["casetype"].selectedIndex;
 
-    const arn = form.arn.value;
-    const acctid = form.acctid.value;
-    const amount = form.amount.value;
-    const merch = form.merchant.value;
-    const chrbk = form.chrgebck.value;
-
-    const trxnDate = form.trxndate.value;
-    const cnclDate = form.cancellation.value;
+    let missingRequired = false;
+    let arn;
+    form.arn.value == "" ? missingRequired = true : arn = form.arn.value;
+    let acctid;
+    form.arn.value == "" ? missingRequired = true : acctid = form.acctid.value;
+    let amount;
+    form.arn.value == "" ? missingRequired = true : amount = form.amount.value;
+    let merch;
+    form.arn.value == "" ? missingRequired = true : merch = form.merchant.value;
+    let chrbk;
+    form.arn.value == "" ? missingRequired = true : chrbk = form.chrgebck.value;
+    let trxnDate;
+    form.arn.value == "" ? missingRequired = true : trxnDate = form.trxndate.value;
+    let cnclDate;
+    form.arn.value == "" ? missingRequired = true : cnclDate = form.cancellation.value;
 
     console.log(arn);
     const chargebackData = new disputeData(caseType, arn, acctid, trxnDate, cnclDate, amount, merch, chrbk);
@@ -53,20 +60,25 @@ function submitDispute(form) {
 
     //add something here to update modal with error message if 
     //certain detail on the form is not provided
-    var modal = document.getElementById("myModal");
+    let modal = document.getElementById("myModal");
     modal.style.display = "block";
 
-    database.ref(arn).set({
-        case_type: caseType,
-        acct_id: acctid,
-        trxn_date: trxnDate,
-        cncl_date: cnclDate,
-        amount: amount,
-        merch: merch,
-        cb_ref: chrbk
-    })
+    if (!missingRequired) {
 
-    form.reset();
+        database.ref(arn).set({
+            case_type: caseType,
+            acct_id: acctid,
+            trxn_date: trxnDate,
+            cncl_date: cnclDate,
+            amount: amount,
+            merch: merch,
+            cb_ref: chrbk
+        })
+
+        form.reset();
+    }else{
+        alert("Error! Data is missing from a required field.")
+    }
 }
 
 function displaySubmittedDisputes() {
@@ -76,7 +88,7 @@ function displaySubmittedDisputes() {
 
 function allStorage() {
 
-    var values = [],
+    const values = [],
         keys = Object.keys(localStorage),
         i = keys.length;
 
@@ -93,24 +105,23 @@ function clearStorage() {
 
 function populateDropdown() {
     const values = allStorage();
-    var submissions = document.getElementById("submissions");
+    let submissions = document.getElementById("submissions");
     keys = Object.keys(localStorage);
 
     console.log(localStorage);
 
     for (i = 0; i < values.length; i++) {
-        var option = document.createElement("OPTION");
+        let option = document.createElement("OPTION");
 
-        var retrievedObject = localStorage.getItem(keys[i]);
-        var parsedObject = JSON.parse(retrievedObject);
+        const retrievedObject = localStorage.getItem(keys[i]);
+        const parsedObject = JSON.parse(retrievedObject);
         //chargeback reference should be a unique values
         option.innerHTML = parsedObject.chrbkRef;
         option.value = i;
 
         //may need to implement a better fix here
-        if(option.innerHTML != "undefined")
-        {
-        submissions.options.add(option);
+        if (option.innerHTML != "undefined") {
+            submissions.options.add(option);
         }
     }
     const textBox = document.getElementById("data");
@@ -125,8 +136,8 @@ function update() {
     readData();
 }
 
-var modal = document.getElementById("myModal");
-var span = document.getElementsByClassName("close")[0];
+let modal = document.getElementById("myModal");
+let span = document.getElementsByClassName("close")[0];
 // When the user clicks on <span> (x), close the modal
 span.onclick = function () {
     modal.style.display = "none";
