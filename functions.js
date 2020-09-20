@@ -35,19 +35,19 @@ function submitDispute(form) {
 
     let missingRequired = false;
     let arn;
-    form.arn.value == "" ? missingRequired = true : arn = form.arn.value;
+    form.arn.value === "" ? missingRequired = true : arn = form.arn.value;
     let acctid;
-    form.arn.value == "" ? missingRequired = true : acctid = form.acctid.value;
+    form.arn.value === "" ? missingRequired = true : acctid = form.acctid.value;
     let amount;
-    form.arn.value == "" ? missingRequired = true : amount = form.amount.value;
+    form.arn.value === "" ? missingRequired = true : amount = form.amount.value;
     let merch;
-    form.arn.value == "" ? missingRequired = true : merch = form.merchant.value;
+    form.arn.value === "" ? missingRequired = true : merch = form.merchant.value;
     let chrbk;
-    form.arn.value == "" ? missingRequired = true : chrbk = form.chrgebck.value;
+    form.arn.value === "" ? missingRequired = true : chrbk = form.chrgebck.value;
     let trxnDate;
-    form.arn.value == "" ? missingRequired = true : trxnDate = form.trxndate.value;
+    form.arn.value === "" ? missingRequired = true : trxnDate = form.trxndate.value;
     let cnclDate;
-    form.arn.value == "" ? missingRequired = true : cnclDate = form.cancellation.value;
+    form.arn.value === "" ? missingRequired = true : cnclDate = form.cancellation.value;
 
     console.log(arn);
     const chargebackData = new disputeData(caseType, arn, acctid, trxnDate, cnclDate, amount, merch, chrbk);
