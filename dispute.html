@@ -48,11 +48,11 @@
             <label for="chrgebck"><b>Chargeback Reference Number</b></label>
             <input name="chrgebck" type="text" required>
 
-            <input id="submit" type="button" value="Submit" onclick="submitDispute(this.form)">
+            <input class="button" id="submit" type="button" value="Submit" onclick="submitDispute(this.form)">
         </div>
     </form>
 
-    <input id="logout" type="button" value="Logout" onClick="">
+    <input class="button" id="logout" type="button" value="Logout" onClick="">
 
     <div id="myModal" class="modal">
         <div class="modal-content">
@@ -86,7 +86,7 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
     </script>
-    <script src="functions.js"></script>
+    <script src="disputes.js"></script>
 
 </body>
 

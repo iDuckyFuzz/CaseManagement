@@ -21,14 +21,12 @@
     <h1 class="header">Admin Page</h1>
     <select class="dropdown" id="submissions" onchange="update()"></select>
     <br>
-    <textarea cols="80" rows="10" id="data" type="text" name="data"></textarea>
-    <br>
     <textarea cols="80" rows="10" id="fireabasedata" type="text" name="fireabasedata"></textarea>
     <br>
-    <input id="fetch" type="button" value="Fetch Data" onclick="displaySubmittedDisputes()">
-    <input id="clear" type="button" value="Clear Data" onclick="clearStorage()">
+    <input class="button" id="fetch" type="button" value="Fetch Data" onclick="">
+    <input class="button" id="delete" type="button" value="Delete Record" onclick="">
     <br>
-    <input id="logout" type="button" value="Logout" onclick="">
+    <input class="button" id="logout" type="button" value="Logout" onclick="">
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
@@ -50,7 +48,7 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
     </script>
-    <script src="functions.js"></script>
+    <script src="admin.js"></script>
 </body>
 
 </html>

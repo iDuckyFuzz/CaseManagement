@@ -1,4 +1,4 @@
-function getOptionValue(select){
+const getOptionValue = (select) => {
     const listDetails = select;
     if(listDetails!=="")
     {
@@ -6,7 +6,7 @@ function getOptionValue(select){
     }
 }
 
-function getSubOptionValue(select){
+const getSubOptionValue = (select) => {
     const listDetails = select;
     if(listDetails!=="")
     {
@@ -14,7 +14,7 @@ function getSubOptionValue(select){
     }
 }
 
-function populateAccountData(select){
+const populateAccountData = (select) => {
     const listDetails = select;
     if(listDetails!=="")
     {

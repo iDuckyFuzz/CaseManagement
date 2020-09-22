@@ -49,67 +49,7 @@ form {
   }
   
   /* Set a style for all buttons */
-  button {
-    background-color: #033877;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-  }
-
-  #login{
-    background-color: #033877;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-  }
-
-  #submit{
-    background-color: #033877;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-  }
-
-  #logout{
-    background-color: #033877;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100px;
-  }
-
-  #fetch{
-    background-color: #033877;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100px;
-  }
-
-  #clear{
-    background-color: #033877;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100px;
-  }
-
-  #add{
+   .button{
     background-color: #033877;
     color: white;
     padding: 14px 20px;
