@@ -1,5 +1,6 @@
 const database = firebase.database();
 
+//create dispute data constructor
 function disputeData(caseType, arn, acctid, trxnDate, cnlxDate, amount, mrchName, chrbkRef) {
     this.caseType = caseType,
         this.arn = arn,
@@ -33,6 +34,8 @@ const errData = (err) => {
 
 const submitDispute = (form) => {
     const caseType = form.elements["casetype"].selectedIndex;
+
+    //TODO: need to update data from form to reflect new firebase format
 
     let missingRequired = false;
     let arn;
