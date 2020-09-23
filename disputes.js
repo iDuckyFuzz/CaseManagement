@@ -12,30 +12,8 @@ function disputeData(caseType, arn, acctid, trxnDate, cnlxDate, amount, mrchName
         this.chrbkRef = chrbkRef
 }
 
-//testing retrieving data
-const readData = () => {
-    let test = firebase.database.DataSnapshot.getChildren();
-    let ref = database.ref('34534645');
-    ref.on('value', gotData, errData)
-    console.log("working!");
-}
-
-const gotData = (data) => {
-    console.log(data.val());
-
-    const firebasedata = document.getElementById('fireabasedata');
-    const returnedData = data.val();
-    firebasedata.value = returnedData.acct_id;
-}
-
-const errData = (err) => {
-    console.log("Error!" + err);
-}
-
 const submitDispute = (form) => {
     const caseType = form.elements["casetype"].selectedIndex;
-
-    //TODO: need to update data from form to reflect new firebase format
 
     let missingRequired = false;
     let arn;
@@ -60,8 +38,6 @@ const submitDispute = (form) => {
     console.log(chargebackData);
     console.log(data);
 
-    localStorage.setItem(chrbk, data);
-
     //add something here to update modal with error message if 
     //certain detail on the form is not provided
     let modal = document.getElementById("myModal");
@@ -72,7 +48,7 @@ const submitDispute = (form) => {
         modalTitle.innerHTML = "Dispute Submitted Succesfully"
         modalMessage.innerHTML = "Click anywhere on the page to continue..."
         modal.style.display = "block";
-        database.ref(arn).set({
+        database.ref("Disputes/" + arn).set({
             case_type: caseType,
             acct_id: acctid,
             trxn_date: trxnDate,
